@@ -1,1 +1,85 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+
+$custom-primary-palette: (
+  50: #517E87,
+  100: #6A98A1,
+  200: #85B3BC,
+  300: #9FCED8,
+  400: #BBEBF4,
+  500: #D2F7FF,
+  600: #EEFCFF,
+  700: #F6FDFF,
+  800: #006875,
+  900: #001F24,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #000000,
+        500: #000000,
+        600: #000000,
+        700: #000000,
+        800: #000000,
+        900: #000000
+    )
+);
+$custom-secondary-palette: (
+  50: #3F484A,
+  100: #566062,
+  200: #6F797B,
+  300: #889295,
+  400: #A3ADAF,
+  500: #BEC8CA,
+  600: #DAE4E6,
+  700: #E9F3F5,
+  800: #F1FBFD,
+  900: #FFFFFF,
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$portfolio-primary: mat.define-palette($custom-primary-palette);
+$portfolio-accent: mat.define-palette($custom-secondary-palette);
+
+// The warn palette is optional (defaults to red).
+$portfolio-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$portfolio-theme: mat.define-light-theme((
+  color: (
+    primary: $portfolio-primary,
+    accent: $portfolio-accent,
+    warn: $portfolio-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($portfolio-theme);
+
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

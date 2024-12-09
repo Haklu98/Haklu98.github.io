@@ -1,0 +1,19 @@
+.home-container {
+  @apply flex justify-center flex-col text-center items-center my-2;
+}
+
+.home-article {
+  @apply flex flex-col gap-10 justify-center items-center max-w-[50%];
+}
+
+.home-article h2 {
+  @apply text-3xl font-semibold;
+}
+
+.home-article h3 {
+  @apply text-2xl font-medium;
+}
+
+.home-article p {
+  @apply text-lg;
+}

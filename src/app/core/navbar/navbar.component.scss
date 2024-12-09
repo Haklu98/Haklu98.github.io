@@ -1,0 +1,15 @@
+.nav-container {
+  @apply flex flex-row gap-10;
+}
+
+.nav-buttons {
+  @apply flex justify-center items-center gap-3;
+}
+
+.nav-buttons button {
+  @apply rounded-full;
+}
+
+mat-toolbar {
+  @apply z-50 drop-shadow-lg;
+}

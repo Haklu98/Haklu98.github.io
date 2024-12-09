@@ -1,0 +1,61 @@
+@use '@angular/material' as mat;
+
+// Define color palettes from the JSON
+$primary-palette: (
+  50: #517E87,
+  100: #6A98A1,
+  200: #85B3BC,
+  300: #9FCED8,
+  400: #BBEBF4,
+  500: #D2F7FF,
+  600: #EEFCFF,
+  700: #F6FDFF,
+  800: #FFFFFF,
+  900: #001F24,
+);
+$secondary-palette: (
+  50: #3F484A,
+  100: #566062,
+  200: #6F797B,
+  300: #889295,
+  400: #A3ADAF,
+  500: #BEC8CA,
+  600: #DAE4E6,
+  700: #E9F3F5,
+  800: #F1FBFD,
+  900: #FFFFFF,
+);
+
+// Define light theme
+$light-theme: mat.define-light-theme((
+  color: (
+    primary: mat.define-palette($primary-palette),
+    secondary: mat.define-palette($secondary-palette),
+    background: #F9F9F9,
+    surface: #F9F9F9,
+    error: #BA1A1A,
+    on-primary: #FFFFFF,
+    on-secondary: #FFFFFF,
+    on-background: #1A1C1C,
+    on-surface: #1A1C1C,
+  ),
+));
+
+// Define dark theme
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: mat.define-palette($primary-palette, 300),
+    secondary: mat.define-palette($secondary-palette, 300),
+    background: #111414,
+    surface: #111414,
+    error: #FFB4AB,
+    on-primary: #00363D,
+    on-secondary: #233336,
+    on-background: #E2E2E3,
+    on-surface: #E2E2E3,
+  ),
+));
+
+// Include Angular Material theming
+@include mat.core();
+@include mat.all-component-themes($light-theme); // Change to `$dark-theme` for dark mode
