@@ -1,8 +1,28 @@
 <div class="home-container">
   <article class="home-article">
   <h2>Hello! I'm Aleksi Hakala</h2>
-  <h3>I'm a software developer who mainly focuses on front-end development and UI/UX. I also have experience with full-stack development, and database management.</h3>
-  <p>Here you can find my projects and contact information and more in-depth take on who I am.</p>
+  <h3>A software developer by day and a musician by heart.</h3>
+  <p>I'm a soon-to-be Bachelor of Business Information Technology graduate from Jamk, with experience in both frontend and backend development.
+    My journey blends the precision of coding with the creativity of music, a passion I've nurtured since I was 7.</p>
+  <p>Whether I'm building intuitive user interfaces or crafting harmonies on stage, I bring dedication, rhythm, and a drive for innovation to everything I do.</p>
+  <p>Let's create something beautiful - Both in pixels and sound!</p>
   </article>
 
+  <div class="latest-projects">
+    <h2>Latest Projects</h2>
+    <div class="project-cards-container">
+      <div class="project-cards" *ngFor="let project of projects">
+        <mat-card class="project-card" routerLink="{{ project.link }}">
+          <mat-card-header>
+            <mat-card-title class="project-title">{{ project.title }}, {{ project.year }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ project.description }}</p>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+  </div>
+  </div>
 </div>
+

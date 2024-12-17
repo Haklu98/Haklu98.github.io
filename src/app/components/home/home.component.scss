@@ -1,9 +1,9 @@
 .home-container {
-  @apply flex justify-center flex-col text-center items-center my-2;
+  @apply flex justify-center flex-col text-center items-center my-14;
 }
 
 .home-article {
-  @apply flex flex-col gap-10 justify-center items-center max-w-[50%];
+  @apply flex flex-col gap-10 justify-center items-center max-w-[50%] mb-10;
 }
 
 .home-article h2 {
@@ -16,4 +16,17 @@
 
 .home-article p {
   @apply text-lg;
+}
+
+.project-cards-container {
+  @apply flex flex-row gap-10 w-screen  justify-center items-center ;
+}
+
+.project-card {
+  @apply w-[14rem] h-[10rem] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)] rounded-lg hover:scale-[1.01] hover:drop-shadow-[0_4px_4px_rgba(100,0,100,2)] duration-[200ms] cursor-pointer;
+  user-select: none;
+}
+
+.mat-card-header {
+  @apply justify-center items-center text-center;
 }
