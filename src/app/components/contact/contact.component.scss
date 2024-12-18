@@ -1,0 +1,36 @@
+.contact {
+  @apply flex justify-center flex-col text-center items-center my-10;}
+
+h2 {
+  @apply text-3xl font-semibold;
+}
+
+.contact-article {
+  @apply flex flex-col gap-2 justify-center items-center max-w-[80%] mb-10;
+}
+
+h3 {
+  @apply text-xl font-semibold my-10;
+}
+
+p {
+  @apply text-lg;
+}
+
+.contact-icons {
+  @apply flex gap-4;}
+
+.contact-icon {
+  @apply h-14 w-full hover:scale-[1.05] hover:drop-shadow-[0_4px_4px_rgba(100,0,100,2)] duration-[200ms] cursor-pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .contact-icon {
+    @apply h-10 w-full hover:scale-[1.05] hover:drop-shadow-[0_4px_4px_rgba(100,0,100,2)] duration-[200ms] cursor-pointer;
+  }
+
+}
+
+.findme {
+  @apply mt-20
+}

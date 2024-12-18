@@ -1,0 +1,39 @@
+<div class="music-container">
+  <article class="music-article">
+  <h3>The music that embodies the mind and soul</h3>
+  <p class="music-text">Here you can find my musical endeavours and the musical skills I have acquired over the years.</p>
+  <div class="music-content">
+    <div class="music-projects">
+      <h2>Music</h2>
+      <div class="music-cards" *ngFor="let project of projects">
+        <mat-card class="music-card" routerLink="{{ project.link }}" *ngIf="project.type == 'music'">
+          <mat-card-header>
+            <mat-card-title class="project-title">{{ project.title }}, {{ project.year }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ project.description }}</p>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+    </div>
+    <div class="music-skills">
+      <h2>Skills and Studies</h2>
+      <div class="music-skills-container">
+        <ul>
+          <li>Live mixing for the band "Nelosolu" since 2024</li>
+          <li>Musician graduate from the Pop & Jazz Conservatory of Jyväskylä, 2022</li>
+          <li>Lead guitarist of the band "Moffat" since 2020</li>
+          <li>Solo artist since 2018</li>
+          <li>Classical Piano & Piano background</li>
+          <li>Sound engineering & sound design</li>
+          <li>Music production, mixing and mastering</li>
+          <li>FL Studio since 2009</li>
+          <li>Ableton basics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+</div>
+

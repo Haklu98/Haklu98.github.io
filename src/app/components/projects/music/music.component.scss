@@ -1,0 +1,39 @@
+.music-container {
+  @apply flex justify-center flex-col text-center items-center my-10;
+}
+
+h3 {
+  @apply text-2xl font-semibold text-center;
+}
+
+.music-projects {
+  @apply my-10;
+}
+
+.music-article {
+  @apply flex flex-col gap-10 justify-center items-center max-w-[80%] mb-10;
+}
+
+.music-text {
+  @apply text-lg;
+}
+
+.music-content {
+  @apply flex flex-col;
+}
+
+.music-cards {
+  @apply flex justify-center;
+}
+
+.music-card {
+  @apply max-w-[14rem] h-[10rem] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)] rounded-lg hover:scale-[1.01] hover:drop-shadow-[0_4px_4px_rgba(100,0,100,2)] duration-[200ms] cursor-pointer;
+  user-select: none;
+}
+
+li {
+  @apply text-lg ;}
+
+ul {
+  list-style-type: circle;
+  @apply text-left}

@@ -1,0 +1,78 @@
+<div class="code-container">
+  <article class="code-article">
+    <h3>Here you can find all the coding and development projects that I have been part of as well as the technologies I am familiar with!</h3>
+    <div class="grid-container">
+      <div class="projects">
+        <h2>Projects</h2>
+        <div class="project-cards" *ngFor="let project of projects">
+          <mat-card class="project-card" routerLink="{{ project.link }}" *ngIf="project.type == 'code'">
+            <mat-card-header>
+              <mat-card-title class="project-title">{{ project.title }}, {{ project.year }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{ project.description }}</p>
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+      </div>
+      <div class="technologies">
+        <h2>Technologies</h2>
+        <div class="technologies-container">
+          <mat-card class="technology-card">
+            <div class="technology-data-container"><img src="assets/images/Angular_gradient.png" alt="Angular" class="technology-icon"> <div class="technology-name">Angular</div></div>
+
+          </mat-card>
+          <mat-card class="technology-card">
+            <div class="technology-data-container"><img src="assets/images/nodejs.png" alt="Nodejs" class="technology-icon"> <div class="technology-name">Node.js</div></div>
+
+          </mat-card>
+          <mat-card class="technology-card">
+            <div class="technology-data-container"><img src="assets/images/tailwindcss.png" alt="Tailwind" class="technology-icon"> <div class="technology-name">Tailwind CSS</div></div>
+
+          </mat-card>
+          <mat-card class="technology-card">
+            <div class="technology-data-container"><img src="assets/images/github.png" alt="github" class="technology-icon"> <div class="technology-name">GitHub</div></div>
+
+          </mat-card>
+          <mat-card class="technology-card">
+            <div class="technology-data-container"><img src="assets/images/vscode-logo.png" alt="github" class="technology-icon"> <div class="technology-name">VSCode</div></div>
+
+          </mat-card>
+          <mat-card class="technology-card">
+            <div class="technology-data-container"><img src="assets/images/figma.png" alt="github" class="technology-icon"> <div class="technology-name">Figma</div></div>
+
+          </mat-card>
+          <mat-card class="technology-card">
+            <div class="technology-data-container"><img src="assets/images/Svelte.png" alt="github" class="technology-icon"> <div class="technology-name">Svelte</div></div>
+
+          </mat-card>
+          <mat-card class="technology-card">
+            <div class="technology-data-container"><img src="assets/images/JavaScript.png" alt="github" class="technology-icon"> <div class="technology-name">JavaScript</div></div>
+
+          </mat-card>
+          <mat-card class="technology-card">
+            <div class="technology-data-container"><img src="assets/images/TypeScript.png" alt="github" class="technology-icon"> <div class="technology-name">TypeScript</div></div>
+
+          </mat-card>
+          <mat-card class="technology-card">
+            <div class="technology-data-container"><img src="assets/images/AWS.png" alt="github" class="technology-icon"> <div class="technology-name">AWS</div></div>
+
+          </mat-card>
+          <mat-card class="technology-card">
+            <div class="technology-data-container"><img src="assets/images/Express.png" alt="github" class="technology-icon"> <div class="technology-name">Express</div></div>
+
+          </mat-card>
+          <mat-card class="technology-card">
+            <div class="technology-data-container"><img src="assets/images/MongoDB.png" alt="github" class="technology-icon"> <div class="technology-name">MongoDB</div></div>
+
+          </mat-card>
+          <mat-card class="technology-card">
+            <div class="technology-data-container"><img src="assets/images/MySQL.png" alt="github" class="technology-icon"> <div class="technology-name">MySQL</div></div>
+
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
