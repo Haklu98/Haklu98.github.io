@@ -17,3 +17,8 @@
 .project-container h3 {
   @apply text-2xl font-semibold;
 }
+
+ul {
+  list-style-type: circle;
+  @apply text-left
+}
