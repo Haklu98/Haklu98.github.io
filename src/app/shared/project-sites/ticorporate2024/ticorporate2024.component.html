@@ -64,7 +64,7 @@
     <li>Discarded the Angular Calendar</li>
   </ul>
   <h3>Sprint 5</h3>
-  <p>During this sprint I started creating my own monthly calendar module and coding it. We also noticed that the Flowbite would not work as intended on Angular 18,
+  <p>During this sprint I started creating my own monthly calendar module and coding it, while also working on the yearly calendar. We also noticed that the Flowbite would not work as intended on Angular 18,
     so we decided to switch to Angular Material. This resulted in the removal of Flowbite and its dependencies, and replacing all the components with Angular Material.
     I also took on the task of cleaning up the html, creating classes for the elements and moving the Tailwind classes to css files.
   </p>
@@ -72,7 +72,107 @@
   <ul>
     <li>Coded the monthly calendar module</li>
     <li>Added the functionality of the monthly calendar getting the events from the database</li>
+    <li>Worked on the yearly calendar and added functionality to it</li>
+    <li>Fixed the bugs on yearly calendar and styled it better</li>
+    <li>Fixed the Navigation bar, replacing the Flowbite with Angular Material</li>
+    <li>Removing Flowbite from all the components and replacing them with Angular Material components</li>
+    <li>Moved the Tailwind classes to css files</li>
+    <li>Cleaned up the html files</li>
   </ul>
+  <h3>Sprint 6</h3>
+  <p>During this sprint, I started working on the UI to make it look like the our UI/UX designer had intended. This meant that I was delving into the
+    documentation of Angular Material and Tailwind. I also took look into the theming with Angular Material which resulted in me changing the css files
+    to scss for easier implementation.
+  </p>
+  <p>
+    As I was studying the Material Documentation, I came to the realization that I should rework my monhtly calendar and use the Material Calendar instead for
+    better accessibility and better styling. I was able to change the month calendar as a whole and it started working as intended.
+  </p>
+  <p>We also paid a visit to Elisa's office to do some user testing with our demo and get more feedback on what works and what doesn't.
+    I took on to make the buttons and all the small elements in the software look more intuitive and more coherent.
+    On top of that I also added validation to the forms and forum messages that the user is asked if he is certain about deleting something.
+  </p>
+  <p>What I actually did this sprint:</p>
+  <ul>
+    <li>Worked on the Material Theme</li>
+    <li>Updated the Monthly Calendar</li>
+    <li>Fine-tuned the Yearly Calendar</li>
+    <li>Updated the CSS to SCSS</li>
+    <li>Created more coherent buttons and actions</li>
+    <li>Added validation to the forms and forum messages</li>
+  </ul>
+  <h3>Sprint 7</h3>
+  <p>During this sprint, we were getting closer to the final product and the end of the course was just a month away.
+    We added the final functionalities during this sprint, such as filtering the events and creating an archive component for past events.
+  </p>
+  <p>My role was to add the filtering to the main page with the event cards and to create the archive component. I also added a filtering to the yearly calendar and
+    made the archive work in a way that it filters the incoming event-data to show only past events. I also came across a slight problem with the yearly calendar, since
+    it was not working as well as it could be. This meant that I'd have to fix it and that one took its own time.
+  </p>
+  <p>What I actually did this sprint:</p>
+  <ul>
+    <li>Added the filtering to the main page with the event cards</li>
+    <li>Created the archive component</li>
+    <li>Added the filtering to work on the yearly calendar</li>
+    <li>Added a grid to the yearly calendar for the events</li>
+    <li>Added the filtering to the archive</li>
+    <li>Updated the event templates to utilize creator_id for the purpose of notifications.</li>
+    <li>Revamped the yearly calendar to follow the UI/UX documentation better</li>
+  </ul>
+
+  <h3>Sprint 8, The Last One</h3>
+  <p>This was the last sprint before the end of the course, and this project. We agreed within our team to only finesse the existing components and modules.
+    No more features were added to the project during this sprint.
+  </p>
+  <p>For the most part I was focused on the yearly calendar, since it had the issue that it was not presenting the events correctly.
+    I had to figure a way to span the events to cover multiple months, should they last more than one month. This was a bit of a challenge for me,
+    but I managed to find a solution. This solution was ngClass and a bit of TypeScript. What I did, was to make a function calculate the span of the event
+    in months and then apply the grid span to said event. Then it would span itself on the month grid and show accordingly.
+  </p>
+  <p>What I actually did this sprint:</p>
+  <ul>
+    <li>Added a function that calculates the span of the event in months</li>
+    <li>Stylized the yearly calendar to follow the UI/UX documentation perfectly</li>
+    <li>Added icons to the yearly calendar events</li>
+    <li>Did the last touches with GitHub and merges</li>
+    <li>Went through the course report with the team and filled in the retrospective</li>
+  </ul>
+  <br>
+  <h3>Conclusion and retrospective</h3>
+  <p>I really enjoyed working on this project and I was able to learn a lot about Angular and Angular Material. With the addition on working with GitHub
+    and learning to find and use the right frameworks and plugins for the project. I learned a lot about the communication between the team members and the
+    scrum process and how to keep everyone on track.
+  </p>
+  <p>The main takeaway for my part is that I was able to get deeper understanding on Angular and frontend development in general. I got some priceless
+    insight on how to work with the UI/UX designer and how to bring life the ideas they have on Figma.
+  </p>
+  <p>Technologies I used:</p>
+  <div class="technologies-container">
+    <mat-card class="technology-card">
+      <div class="technology-data-container"><img src="assets/images/Angular_gradient.png" alt="Angular" class="technology-icon"> <div class="technology-name">Angular</div></div>
+
+    </mat-card>
+    <mat-card class="technology-card">
+      <div class="technology-data-container"><img src="assets/images/nodejs.png" alt="Nodejs" class="technology-icon"> <div class="technology-name">Node.js</div></div>
+
+    </mat-card>
+    <mat-card class="technology-card">
+      <div class="technology-data-container"><img src="assets/images/tailwindcss.png" alt="Tailwind" class="technology-icon"> <div class="technology-name">Tailwind CSS</div></div>
+
+    </mat-card>
+    <mat-card class="technology-card">
+      <div class="technology-data-container"><img src="assets/images/github.png" alt="github" class="technology-icon"> <div class="technology-name">GitHub</div></div>
+
+    </mat-card>
+    <mat-card class="technology-card">
+      <div class="technology-data-container"><img src="assets/images/vscode-logo.png" alt="github" class="technology-icon"> <div class="technology-name">VSCode</div></div>
+
+    </mat-card>
+    <mat-card class="technology-card">
+      <div class="technology-data-container"><img src="assets/images/figma.png" alt="github" class="technology-icon"> <div class="technology-name">Figma</div></div>
+
+    </mat-card>
+  </div>
 </article>
 
 </div>
