@@ -2,6 +2,13 @@
   @apply flex flex-row gap-10;
 }
 
+@media screen and (max-width: 700px) {
+  .nav-container {
+    @apply justify-between w-screen;
+  }
+
+}
+
 .nav-buttons {
   @apply flex justify-center items-center gap-3;
 }
@@ -10,10 +17,28 @@
   @apply rounded-full;
 }
 
+
+
 mat-toolbar {
   @apply z-50 drop-shadow-lg;
 }
 
 .logo {
   @apply h-14;
+}
+
+@media screen and (min-width: 700px) {
+  .small-nav {
+    @apply hidden;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+  .small-nav {
+    @apply flex items-center mr-0;
+  }
+  .nav-buttons {
+    @apply hidden;
+  }
 }

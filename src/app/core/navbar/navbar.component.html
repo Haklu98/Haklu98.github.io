@@ -1,11 +1,20 @@
 <mat-toolbar>
   <div class="nav-container">
-  <img src="assets/images/NimmariMusta_noshadow.png" alt="logo" class="logo">
-  <nav class="nav-buttons">
-    <button mat-stroked-button color="accent" routerLink="/home">Home</button>
-    <button mat-stroked-button color="accent" routerLink="/projects">Projects</button>
-    <button mat-stroked-button color="accent" routerLink="/about">About</button>
-    <button mat-stroked-button color="accent" routerLink="/contact">Contact</button>
+    <img src="assets/images/NimmariMusta_noshadow.png" alt="logo" class="logo">
+    <nav class="nav-buttons">
+      <button mat-stroked-button color="accent" routerLink="/home">Home</button>
+      <button mat-stroked-button color="accent" routerLink="/projects">Projects</button>
+      <button mat-stroked-button color="accent" routerLink="/about">About</button>
+      <button mat-stroked-button color="accent" routerLink="/contact">Contact</button>
+    </nav>
+<nav class="small-nav">
+  <button mat-button [mat-menu-trigger-for]="menu"><i class="material-symbols-outlined">menu</i></button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/home">Home</button>
+      <button mat-menu-item routerLink="/projects">Projects</button>
+      <button mat-menu-item routerLink="/about">About</button>
+      <button mat-menu-item routerLink="/contact">Contact</button>
+    </mat-menu>
   </nav>
-
-</div></mat-toolbar>
+</div>
+</mat-toolbar>
