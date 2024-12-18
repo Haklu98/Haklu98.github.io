@@ -4,8 +4,9 @@
 
 @media screen and (max-width: 700px) {
   .nav-container {
-    @apply justify-between w-screen;
+    @apply grid grid-cols-3 gap-0 w-max;
   }
+
 
 }
 
@@ -36,9 +37,13 @@ mat-toolbar {
 
 @media screen and (max-width: 700px) {
   .small-nav {
-    @apply flex items-center mr-0;
+    @apply flex items-center justify-end;
   }
   .nav-buttons {
     @apply hidden;
+  }
+
+  .logo {
+    @apply w-[8rem];
   }
 }
