@@ -27,8 +27,8 @@ ul {
   @apply grid lg:grid-cols-4 gap-4 md:grid-cols-3 sm:grid-cols-2;
 }
 
-mat-card {
-  @apply p-2 hover:bg-[#46464685] drop-shadow-[0_2px_2px_rgba(0,0,0,2)] rounded-lg ;
+.technologies-container mat-card {
+  @apply p-2 hover:bg-[#7e7e7e85] drop-shadow-[0_2px_2px_rgba(0,0,0,2)] rounded-lg ;
   background-color: #b4b4b4;
   user-select: none;
 }
@@ -44,3 +44,96 @@ mat-card {
   .technology-name {
     @apply text-lg font-semibold border-solid border-2 border-[#2b2b2b9a] rounded-md p-2 bg-[#4b4b4b5e] w-40;
   }
+
+
+@media screen and (max-width: 1300px) {
+  .images-sprint3 {
+    @apply flex flex-col gap-4;
+  }
+
+  .images-sprint3 img {
+    @apply h-[18rem] object-cover drop-shadow-md;
+  }
+
+  .images-sprint4 {
+    @apply flex flex-col gap-4;
+  }
+
+  .images-sprint5 {
+    @apply flex flex-col gap-4;
+  }
+
+  .images-sprint6 {
+    @apply flex flex-col gap-4;
+  }
+
+  .images-sprint4 img {
+    @apply object-contain drop-shadow-md;
+  }
+  .images-sprint5 img {
+    @apply object-contain drop-shadow-md;
+  }
+
+  .images-sprint6 img {
+    @apply object-contain drop-shadow-md;
+  }
+
+  .attachments1 {
+    @apply flex flex-col gap-4 justify-center;
+  }
+
+  .attachments2 {
+    @apply flex flex-col gap-4 justify-center;
+  }
+
+  .attachments3 {
+    @apply flex flex-col gap-4 justify-center;
+  }
+
+}
+
+@media screen and (min-width: 1300px) {
+  .images-sprint3 {
+    @apply flex flex-row gap-2;
+  }
+
+  .images-sprint3 img {
+    @apply h-[18rem] object-cover;
+  }
+
+  .attachments1 {
+    @apply flex flex-row gap-4;
+  }
+
+  .attachments2 {
+    @apply flex flex-row gap-4;
+  }
+
+  .attachments3 {
+    @apply flex flex-col gap-4;
+  }
+
+  .images-sprint4 {
+    @apply flex flex-col;
+  }
+  .images-sprint6 {
+    @apply flex flex-col gap-2;
+  }
+
+  .images-sprint6 img {
+    @apply h-[18rem] object-cover drop-shadow-md;
+  }
+
+
+}
+
+.code {
+  @apply text-left;
+}
+
+.code-card {
+  @apply p-2 drop-shadow-[0_2px_2px_rgba(0,0,0,2)] rounded-lg ;
+  background-color: #b4b4b4;
+}
+
+

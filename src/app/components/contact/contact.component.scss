@@ -34,3 +34,7 @@ p {
 .findme {
   @apply mt-20
 }
+
+.email {
+  @apply underline text-blue-600 hover:text-blue-900;
+}

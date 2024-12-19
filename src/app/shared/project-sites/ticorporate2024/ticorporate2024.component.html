@@ -38,6 +38,10 @@
     After getting feedback on the prototypes, we were able to construct the final UI/UX prototype that would become the guideline for the project. We also
     designed the database structure and started creating the architecture of the software.
   </p>
+  <div class="images-sprint3">
+    <img src="assets/images/figmaSS2.png" alt="sprint3-2" class="sprint3-image">
+    <img src="assets/images/figmaSS.png" alt="sprint3-1" class="sprint3-image">
+  </div>
   <h3>Sprint 4</h3>
   <p>The fourth sprint was the first sprint where we started coding and actually developing the software.</p>
   <p>I set up the angular project and pushed it to GitHub and wrote down instructions on the Git workflow. Together with the other team members, we
@@ -63,8 +67,41 @@
     <li>Coding the Monthly View -component</li>
     <li>Discarded the Angular Calendar</li>
   </ul>
+  <div class="attachments1">
+    <div class="images-sprint4">
+      <p>The infrastructure within Angular:</p>
+      <img src="assets/images/vscodeSS1.png" alt="sprint4-1" class="sprint4-image">
+    </div>
+    <div class="card-div">
+      <p>How the code with navigation and footer looks like:</p>
+      <mat-card class="code-card">
+      <code class="code">
+        <p>app.component.html</p>
+        <div>
+        <div>&lt;div class="flex flex-col min-h-screen overflow-hidden"&gt;</div>
+        <div>&nbsp; &lt;!--Nav component set as sticky to the top of the page--&gt;</div>
+        <div>&nbsp; &lt;app-nav *ngIf="showNav"&gt; &lt;/app-nav&gt;</div>
+        <div>&nbsp; &lt;ng-toast [width]="300" [position]="ToasterPosition.BOTTOM_CENTER" /&gt;</div>
+        <div>&nbsp; &lt;!--Router outlet for routing between pages--&gt;</div>
+        <div>&nbsp; &lt;div class="flex-1"&gt;</div>
+        <div>&nbsp; &nbsp; &lt;router-outlet&gt;&lt;/router-outlet&gt;</div>
+        <div>&nbsp; &lt;/div&gt;</div>
+        <br />
+        <div>&nbsp; &lt;!--Footer component set as sticky to the bottom of the page--&gt;</div>
+        <div>&nbsp; &lt;div id="grower" class="flex grow"&gt;&lt;/div&gt;</div>
+        <div>&nbsp; &lt;app-footer class="footer-app" role="contentinfo"&gt;&lt;/app-footer&gt;</div>
+        <div>&lt;/div&gt;</div>
+        </div>
+      </code>
+    </mat-card></div>
+
+
+  </div>
+
+
   <h3>Sprint 5</h3>
-  <p>During this sprint I started creating my own monthly calendar module and coding it, while also working on the yearly calendar. We also noticed that the Flowbite would not work as intended on Angular 18,
+  <p>During this sprint I started creating my own monthly calendar module and coding it, while also working on the yearly calendar. For the monthly calendar, I used the
+    date-fns library for formatting the time and date in a way that was easy to comprehend. We also noticed that the Flowbite would not work as intended on Angular 18,
     so we decided to switch to Angular Material. This resulted in the removal of Flowbite and its dependencies, and replacing all the components with Angular Material.
     I also took on the task of cleaning up the html, creating classes for the elements and moving the Tailwind classes to css files.
   </p>
@@ -79,6 +116,37 @@
     <li>Moved the Tailwind classes to css files</li>
     <li>Cleaned up the html files</li>
   </ul>
+  <div class="attachments2">
+    <div class="images-sprint5">
+      <p>The infrastructure within Angular:</p>
+      <img src="assets/images/vscodeSS1.png" alt="sprint4-1" class="sprint4-image">
+    </div>
+    <div class="card-div">
+      <p>The function that creates the base for the monthly calendar:</p>
+      <mat-card class="code-card">
+      <code class="code">
+        <p>month.component.ts</p>
+        <div>
+          <div>
+          <div>generateMonthCalendar() &#123;</div>
+          <div>&nbsp; &nbsp; const startOfMonthDate = startOfMonth(this.currentMonth);</div>
+          <div>&nbsp; &nbsp; const endOfMonthDate = endOfMonth(this.currentMonth);</div>
+          <br />
+          <div>&nbsp; &nbsp; // Let's get the start and end dates of the first week and last week</div>
+          <div>&nbsp; &nbsp; const startDate = startOfWeek(startOfMonthDate, &#123; weekStartsOn: 1 &#125;);</div>
+          <div>&nbsp; &nbsp; const endDate = endOfWeek(endOfMonthDate, &#123; weekStartsOn: 1 &#125;);</div>
+          <br />
+          <div>&nbsp; &nbsp; // Here we generate all days between start and end</div>
+          <div>&nbsp; &nbsp; this.days = eachDayOfInterval(&#123; start: startDate, end: endDate &#125;);</div>
+          <div>&nbsp; &#125;</div>
+          </div>
+          <div>&nbsp;</div>
+          </div>
+      </code>
+    </mat-card></div>
+
+
+  </div>
   <h3>Sprint 6</h3>
   <p>During this sprint, I started working on the UI to make it look like the our UI/UX designer had intended. This meant that I was delving into the
     documentation of Angular Material and Tailwind. I also took look into the theming with Angular Material which resulted in me changing the css files
@@ -101,6 +169,41 @@
     <li>Created more coherent buttons and actions</li>
     <li>Added validation to the forms and forum messages</li>
   </ul>
+  <div class="attachments3">
+    <div class="images-sprint6">
+      <p>The infrastructure within Angular:</p>
+      <img src="assets/images/screenshot1.png" alt="sprint5-1" class="sprint5-image">
+      <img src="assets/images/screenshot2.png" alt="sprint5-2" class="sprint5-image">
+      <img src="assets/images/screenshot6.png" alt="sprint5-2" class="sprint5-image">
+      <img src="assets/images/screenshot8.png" alt="sprint5-2" class="sprint5-image">
+
+    </div>
+    <div class="card-div">
+      <p>The function that creates the base for the monthly calendar:</p>
+      <mat-card class="code-card">
+      <code class="code">
+        <p>month.component.ts</p>
+        <div>
+          <div>
+          <div>generateMonthCalendar() &#123;</div>
+          <div>&nbsp; &nbsp; const startOfMonthDate = startOfMonth(this.currentMonth);</div>
+          <div>&nbsp; &nbsp; const endOfMonthDate = endOfMonth(this.currentMonth);</div>
+          <br />
+          <div>&nbsp; &nbsp; // Let's get the start and end dates of the first week and last week</div>
+          <div>&nbsp; &nbsp; const startDate = startOfWeek(startOfMonthDate, &#123; weekStartsOn: 1 &#125;);</div>
+          <div>&nbsp; &nbsp; const endDate = endOfWeek(endOfMonthDate, &#123; weekStartsOn: 1 &#125;);</div>
+          <br />
+          <div>&nbsp; &nbsp; // Here we generate all days between start and end</div>
+          <div>&nbsp; &nbsp; this.days = eachDayOfInterval(&#123; start: startDate, end: endDate &#125;);</div>
+          <div>&nbsp; &#125;</div>
+          </div>
+          <div>&nbsp;</div>
+          </div>
+      </code>
+    </mat-card></div>
+
+
+  </div>
   <h3>Sprint 7</h3>
   <p>During this sprint, we were getting closer to the final product and the end of the course was just a month away.
     We added the final functionalities during this sprint, such as filtering the events and creating an archive component for past events.
