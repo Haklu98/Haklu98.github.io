@@ -77,7 +77,7 @@
       <mat-card class="code-card">
       <code class="code">
         <p>app.component.html</p>
-
+        <div class="code-snippet-4">
         <div>&lt;div class="flex flex-col min-h-screen overflow-hidden"&gt;</div>
         <div>&nbsp; &lt;!--Nav component set as sticky to the top of the page--&gt;</div>
         <div>&nbsp; &lt;app-nav *ngIf="showNav"&gt; &lt;/app-nav&gt;</div>
@@ -92,7 +92,7 @@
         <div>&nbsp; &lt;div id="grower" class="flex grow"&gt;&lt;/div&gt;</div>
         <div>&nbsp; &lt;app-footer class="footer-app" role="contentinfo"&gt;&lt;/app-footer&gt;</div>
         <div>&lt;/div&gt;</div>
-
+      </div>
       </code>
     </mat-card></div>
 
@@ -124,7 +124,7 @@
       <mat-card class="code-card">
       <code class="code">
         <p>month.component.ts</p>
-        <div>
+        <div class="code-snippet-5">
           <div>
           <div>generateMonthCalendar() &#123;</div>
           <div>&nbsp; &nbsp; const startOfMonthDate = startOfMonth(this.currentMonth);</div>
@@ -183,7 +183,7 @@
       <mat-card class="code-card">
       <code class="code">
         <p>confirm-post-delete.component.ts</p>
-        <div>
+        <div class="code-snippet-6-1">
           <div>export class ConfirmPostDeleteComponent &#123;</div>
           <div>&nbsp; // Create a constructor, that takes the</div>
           <div>&nbsp;// MatDialogRef as a parameter,</div>
@@ -206,7 +206,7 @@
     <mat-card class="code-card">
       <code class="code">
         <p>post.component.ts</p>
-          <div>
+          <div class="code-snippet-6-2">
           <div>&nbsp; // Open dialog for post deletion confirmation</div>
           <div>&nbsp; openDialogPost(): void &#123;</div>
           <div>&nbsp; &nbsp; const dialogRef = this.dialog.open</div>
@@ -262,7 +262,7 @@
       <mat-card class="code-card">
       <code class="code">
         <p>home.component.ts</p>
-        <div>
+        <div class="code-snippet-7">
           <div>// Filtering function that are used with select box in small screen</div>
           <div>&nbsp; activeItem?: string | null;</div>
           <div>&nbsp; changeFilterSelection(value: string | null) &#123;</div>
@@ -370,5 +370,5 @@
     </mat-card>
   </div>
 </article>
-
+  <button mat-stroked-button color="accent" (click)="scrollToTop()">Back to the top</button>
 </div>
