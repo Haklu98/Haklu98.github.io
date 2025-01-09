@@ -6,6 +6,12 @@
   @apply grid grid-cols-2 grid-rows-4 gap-10 justify-center items-center mb-10 w-[50%] text-left;
 }
 
+@media screen and (min-width: 1250px) {
+  .image-1-sm {
+    display: none;}
+}
+
+
 @media screen and (max-width: 1250px) {
 
   .about-article {
@@ -13,7 +19,11 @@
   }
 
   h3 {
-    @apply text-xl align-top flex;
+    @apply text-xl align-top flex text-left;
+  }
+
+  .image-1 {
+    display: none;
   }
 
 }

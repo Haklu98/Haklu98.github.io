@@ -3,7 +3,7 @@
     <h3>Here you can find all the coding and development projects that I have been part of as well as the technologies I am familiar with!</h3>
     <div class="grid-container">
       <div class="projects">
-        <h2>Projects</h2>
+        <h3>Projects</h3>
         <div class="project-cards" *ngFor="let project of projects">
           <mat-card class="project-card" routerLink="{{ project.link }}" *ngIf="project.type == 'code'">
             <mat-card-header>
@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="technologies">
-        <h2>Technologies</h2>
+        <h3>Technologies</h3>
         <div class="technologies-container">
           <mat-card class="technology-card">
             <div class="technology-data-container"><img src="assets/images/Angular_gradient.png" alt="Angular" class="technology-icon"> <div class="technology-name">Angular</div></div>
@@ -72,6 +72,13 @@
 
           </mat-card>
         </div>
+      </div>
+      <div class="certs">
+        <h3>Certifications</h3>
+        <div class="certs-container">
+          <a href="https://www.credly.com/badges/af32de95-93a5-4bc1-95f6-87435691873a/public_url"><img src="assets/images/aws-academy-graduate-aws-academy-cloud-foundations.png" alt="github" class="cert-icon-1"></a>
+          <a href="https://www.credly.com/badges/0cc70223-b7a4-4851-960d-b7e5599d33ad/public_url"><img src="assets/images/aws-academy-graduate-aws-academy-cloud-architecting.png" alt="github" class="cert-icon-2"></a>
+          </div>
       </div>
     </div>
   </article>

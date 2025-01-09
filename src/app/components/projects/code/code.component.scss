@@ -6,6 +6,20 @@
   @apply flex flex-col gap-10 justify-center items-center max-w-[80%] mb-10;
 }
 
+.certs {
+  margin-top: 4rem;
+}
+
+.certs-container {
+  @apply flex flex-row gap-4 justify-center items-center;
+}
+
+.certs-container img {
+  @apply h-40 hover:scale-[1.01] hover:drop-shadow-[0_4px_4px_rgba(100,0,100,2)] duration-[200ms] ;
+}
+
+
+
 h3 {
   @apply text-2xl font-semibold text-center;
 }
@@ -14,6 +28,10 @@ h3 {
 
   .grid-container {
     @apply grid grid-cols-2 gap-4;
+  }
+
+  .certs {
+    @apply col-span-2;
   }
 
 }
