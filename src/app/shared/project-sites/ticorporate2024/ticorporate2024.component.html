@@ -77,11 +77,12 @@
       <mat-card class="code-card">
       <code class="code">
         <p>app.component.html</p>
-        <div>
+
         <div>&lt;div class="flex flex-col min-h-screen overflow-hidden"&gt;</div>
         <div>&nbsp; &lt;!--Nav component set as sticky to the top of the page--&gt;</div>
         <div>&nbsp; &lt;app-nav *ngIf="showNav"&gt; &lt;/app-nav&gt;</div>
-        <div>&nbsp; &lt;ng-toast [width]="300" [position]="ToasterPosition.BOTTOM_CENTER" /&gt;</div>
+        <div>&nbsp; &lt;ng-toast [width]="300" [position]=</div>
+        <div>"ToasterPosition.BOTTOM_CENTER" /&gt;</div>
         <div>&nbsp; &lt;!--Router outlet for routing between pages--&gt;</div>
         <div>&nbsp; &lt;div class="flex-1"&gt;</div>
         <div>&nbsp; &nbsp; &lt;router-outlet&gt;&lt;/router-outlet&gt;</div>
@@ -91,7 +92,7 @@
         <div>&nbsp; &lt;div id="grower" class="flex grow"&gt;&lt;/div&gt;</div>
         <div>&nbsp; &lt;app-footer class="footer-app" role="contentinfo"&gt;&lt;/app-footer&gt;</div>
         <div>&lt;/div&gt;</div>
-        </div>
+
       </code>
     </mat-card></div>
 
@@ -117,10 +118,7 @@
     <li>Cleaned up the html files</li>
   </ul>
   <div class="attachments2">
-    <div class="images-sprint5">
-      <p>The infrastructure within Angular:</p>
-      <img src="assets/images/vscodeSS1.png" alt="sprint4-1" class="sprint4-image">
-    </div>
+
     <div class="card-div">
       <p>The function that creates the base for the monthly calendar:</p>
       <mat-card class="code-card">
@@ -170,37 +168,64 @@
     <li>Added validation to the forms and forum messages</li>
   </ul>
   <div class="attachments3">
+    <p>Screenshots of the website:</p>
     <div class="images-sprint6">
-      <p>The infrastructure within Angular:</p>
+
       <img src="assets/images/screenshot1.png" alt="sprint5-1" class="sprint5-image">
       <img src="assets/images/screenshot2.png" alt="sprint5-2" class="sprint5-image">
       <img src="assets/images/screenshot6.png" alt="sprint5-2" class="sprint5-image">
       <img src="assets/images/screenshot8.png" alt="sprint5-2" class="sprint5-image">
 
     </div>
-    <div class="card-div">
-      <p>The function that creates the base for the monthly calendar:</p>
+    <p>The functions that verify the deletion of a post:</p>
+    <div class="card-div-6">
+
       <mat-card class="code-card">
       <code class="code">
-        <p>month.component.ts</p>
+        <p>confirm-post-delete.component.ts</p>
         <div>
-          <div>
-          <div>generateMonthCalendar() &#123;</div>
-          <div>&nbsp; &nbsp; const startOfMonthDate = startOfMonth(this.currentMonth);</div>
-          <div>&nbsp; &nbsp; const endOfMonthDate = endOfMonth(this.currentMonth);</div>
+          <div>export class ConfirmPostDeleteComponent &#123;</div>
+          <div>&nbsp; // Create a constructor, that takes the</div>
+          <div>&nbsp;// MatDialogRef as a parameter,</div>
+          <div>&nbsp; // which in turn is used to open or close the dialog.</div>
+          <div>constructor(</div>
+          <div>&nbsp; public dialogRef: MatDialogRef</div>
+          <div>&nbsp; &lt;ConfirmPostDeleteComponent&gt;,</div>
+          <div>&nbsp; ) &#123; &#125;</div>
           <br />
-          <div>&nbsp; &nbsp; // Let's get the start and end dates of the first week and last week</div>
-          <div>&nbsp; &nbsp; const startDate = startOfWeek(startOfMonthDate, &#123; weekStartsOn: 1 &#125;);</div>
-          <div>&nbsp; &nbsp; const endDate = endOfWeek(endOfMonthDate, &#123; weekStartsOn: 1 &#125;);</div>
-          <br />
-          <div>&nbsp; &nbsp; // Here we generate all days between start and end</div>
-          <div>&nbsp; &nbsp; this.days = eachDayOfInterval(&#123; start: startDate, end: endDate &#125;);</div>
-          <div>&nbsp; &#125;</div>
-          </div>
-          <div>&nbsp;</div>
+          <div>&nbsp; // Giving the mother component the message "delete"</div>
+          <div>&nbsp; // with onDelete, which launches</div>
+          <div>&nbsp; // the delete-function within the post-component.</div>
+          <div>&nbsp; &nbsp; onDelete( )&#123;</div>
+          <div>&nbsp; &nbsp; &nbsp; this.dialogRef.close('delete');</div>
+          <div>&nbsp; &nbsp; &#125;</div>
+          <div>&#125;</div>
           </div>
       </code>
-    </mat-card></div>
+    </mat-card>
+    <mat-card class="code-card">
+      <code class="code">
+        <p>post.component.ts</p>
+          <div>
+          <div>&nbsp; // Open dialog for post deletion confirmation</div>
+          <div>&nbsp; openDialogPost(): void &#123;</div>
+          <div>&nbsp; &nbsp; const dialogRef = this.dialog.open</div>
+          <div>&nbsp; &nbsp; (ConfirmPostDeleteComponent);</div>
+          <br />
+          <div>&nbsp; &nbsp; dialogRef.afterClosed()</div>
+          <div>&nbsp; &nbsp;.subscribe((result) =&gt; &#123;</div>
+          <div>&nbsp; &nbsp; &nbsp; // When the dialog is closed and if it returns value "delete",</div>
+          <div>&nbsp; &nbsp; &nbsp; // we activate the deletePost function</div>
+          <div>&nbsp; &nbsp; &nbsp; if (result === 'delete') &#123;</div>
+          <div>&nbsp; &nbsp; &nbsp; &nbsp; this.deletePost(this.post);</div>
+          <div>&nbsp; &nbsp; &nbsp; &#125;</div>
+          <div>&nbsp; &nbsp; &#125;);</div>
+          <div>&nbsp; &#125;</div>
+          </div>
+
+      </code>
+    </mat-card>
+  </div>
 
 
   </div>
@@ -214,7 +239,7 @@
   </p>
   <p>What I actually did this sprint:</p>
   <ul>
-    <li>Added the filtering to the main page with the event cards</li>
+    <li>Added the filtering to the main page with the event cards with our other frontend developer</li>
     <li>Created the archive component</li>
     <li>Added the filtering to work on the yearly calendar</li>
     <li>Added a grid to the yearly calendar for the events</li>
@@ -222,6 +247,56 @@
     <li>Updated the event templates to utilize creator_id for the purpose of notifications.</li>
     <li>Revamped the yearly calendar to follow the UI/UX documentation better</li>
   </ul>
+
+  <div class="attachments4">
+    <p>Filtering in the works:</p>
+
+    <div class="images-sprint7">
+
+      <img src="assets/images/screenshot5.png" alt="sprint7-1" class="sprint7-image">
+      <img src="assets/images/screenshot9.png" alt="sprint7-2" class="sprint7-image">
+
+    </div>
+    <div class="card-div">
+      <p>Filtering functions:</p>
+      <mat-card class="code-card">
+      <code class="code">
+        <p>home.component.ts</p>
+        <div>
+          <div>// Filtering function that are used with select box in small screen</div>
+          <div>&nbsp; activeItem?: string | null;</div>
+          <div>&nbsp; changeFilterSelection(value: string | null) &#123;</div>
+          <div>&nbsp; &nbsp; this.activeItem = value;</div>
+          <div>&nbsp; &nbsp; this.filteredCardData = this.filteringOldPostAway();</div>
+          <div>&nbsp; &nbsp; this.filtederYearlyData = this.userData;</div>
+          <div>// required for the data to stay coherent</div>
+          <br />
+          <div>&nbsp; &nbsp; const selectedFilter = value;</div>
+          <div>&nbsp; &nbsp; console.log(selectedFilter);</div>
+          <div>&nbsp; &nbsp; if (selectedFilter == 'All') &#123;</div>
+          <div>&nbsp; &nbsp; &nbsp; this.getData();</div>
+          <div>&nbsp; &nbsp; &#125; else if (selectedFilter == this.userId) &#123;</div>
+          <div>&nbsp; &nbsp; &nbsp; this.filteredCardData = this.filteredCardData.filter(</div>
+          <div>&nbsp; &nbsp; &nbsp; &nbsp; (event) =&gt; selectedFilter == event.creatorId</div>
+          <div>&nbsp; &nbsp; &nbsp; );</div>
+          <div>&nbsp; &nbsp; &nbsp; this.filtederYearlyData = this.filtederYearlyData.filter(</div>
+          <div>&nbsp; &nbsp; &nbsp; &nbsp; (event) =&gt; selectedFilter == event.creatorId</div>
+          <div>&nbsp; &nbsp; &nbsp; );</div>
+          <div>&nbsp; &nbsp; &#125; else &#123;</div>
+          <div>&nbsp; &nbsp; &nbsp; this.filteredCardData = this.filteredCardData.filter(</div>
+          <div>&nbsp; &nbsp; &nbsp; &nbsp; (event) =&gt; selectedFilter == event.eventType</div>
+          <div>&nbsp; &nbsp; &nbsp; );</div>
+          <div>&nbsp; &nbsp; &nbsp; this.filtederYearlyData = this.filtederYearlyData.filter(</div>
+          <div>&nbsp; &nbsp; &nbsp; &nbsp; (event) =&gt; selectedFilter == event.eventType</div>
+          <div>&nbsp; &nbsp; &nbsp; );</div>
+          <div>&nbsp; &nbsp; &#125;</div>
+          <div>&nbsp; &#125;</div>
+        </div>
+      </code>
+    </mat-card></div>
+
+  </div>
+
 
   <h3>Sprint 8, The Last One</h3>
   <p>This was the last sprint before the end of the course, and this project. We agreed within our team to only finesse the existing components and modules.
@@ -240,6 +315,24 @@
     <li>Did the last touches with GitHub and merges</li>
     <li>Went through the course report with the team and filled in the retrospective</li>
   </ul>
+  <div class="attachments5">
+    <p>The yearly calendar:</p>
+
+    <div class="images-sprint8">
+
+      <img src="assets/images/screenshot3.png" alt="sprint7-1" class="sprint7-image">
+
+
+    </div>
+    <div class="card-div">
+      <p>Yealy Calendar functionality:</p>
+      <mat-card class="code-card">
+      <code class="code">
+
+      </code>
+    </mat-card></div>
+
+  </div>
   <br>
   <h3>Conclusion and retrospective</h3>
   <p>I really enjoyed working on this project and I was able to learn a lot about Angular and Angular Material. With the addition on working with GitHub
